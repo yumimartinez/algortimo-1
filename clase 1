@@ -22,7 +22,7 @@ int digitosimpares(int z)
 	while (z>0)
 	{ z = z / 10;
 	  d = z % 10;
-	  if( d /2 !=0){
+	  if( d %2 !=0){
 	  c = c + d;
 	  }
 	}
