@@ -1,0 +1,98 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int digitos(int a)
+{
+	int s=0;
+
+	while (a>0)
+	{ a = a / 10;
+	  s++;
+	}
+	  return(s);
+	
+}
+
+int digitosimpares(int z)
+{
+	int c=0,d;
+
+	while (z>0)
+	{ 
+	  d = z % 10;
+	  if( d % 2 !=0){
+	  c = c + d;
+	  }
+	z = z / 10;
+	}
+
+	  return(c);
+}
+
+int cambiodeposicion(int p)
+{
+	int h=0,m;
+	while(p>0)
+	{
+		m = p%10;
+		h = h*10+m;
+		p = p/10;
+	}
+	return (h);
+}
+
+int numerosimpares (int x)
+{ int y,w=0;
+
+	while(x>0)
+	{ y = x%10;
+			if( y % 2 !=0)
+			{ w = (w+y)*10;
+
+			}
+			x = x/10;
+			
+	}
+	return (w);
+}
+int main()
+{
+	int  n,r,l,v,opcion,i,q;
+	cout<< "introduzca su numero por favor: "<< endl;
+	cin>> n;
+	if(n<=0){
+		cout<< " su numero no es natural "<< endl;
+		cout<< " su numero tiene que se mayor a 0 !"<< endl;
+		cout<< " ESTUDIA!! NO SEAS COMO FLOJO!!" << endl;
+		getch();
+	}
+	else {
+	do{
+	cout<< " MENU!!"<< endl;
+	cout<<" 1.- contar digitos"<< endl;
+	cout<<" 2.- sumar digitos impares"<< endl;
+	cout<<" 3.- ordenar numero al reves"<< endl;
+	cout<<" 4.- numeros solo impares"<< endl;
+	cout<<" 0.- SALIR"<< endl;
+	cin>> opcion;
+
+	switch (opcion)
+	{
+
+	case 1:		r = digitos(n);
+				cout<< "su cantidad de digitos es: "<< r <<endl;break;
+	case 2:		l = digitosimpares(n);
+				cout<< "su cantidad sumada de numeros impares es: "<< l << endl;break;
+	case 3:		v = cambiodeposicion(n);
+				cout<< "su numero volcado es: "<< v << endl;break;
+	case 4:		i = numerosimpares(n);
+				q = cambiodeposicion(i);
+				cout<< "su numeros impares son:" << q << endl; break;
+	case 0:		cout<<" SALIR "<< endl; break; 	
+	}
+
+	} while(opcion !=0);
+	}
+}
