@@ -69,11 +69,12 @@ void ultimo(int n)
 	}
 }
 void fibonacci(int a)
-{ int i,j=0,m=1;
-	for( i=1; i<=a ;i++)
-	{	cout<< m << " " ;
-		m = m+j;
-		j++;
+{ int i,j=1,m=1,n=1;
+	for( i=0; i<=a ;i++)
+	{	cout<< n << " " ;
+		n = m+j;
+		m = j;
+		j = n;
 	}
 }	
 void main()
