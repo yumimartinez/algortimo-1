@@ -1,0 +1,41 @@
+#include <conio.h>
+#include <iostream>
+
+using namespace std;
+void cargar (int vec[],int n)
+{ int i;
+	for(i=0; i<n; i++)
+	{ cout<< " carga tu vector amigo"<< endl;
+	cin>> vec[i];
+	}
+}
+void mostrar(int vec[], int n)
+{ int i;
+	for(i=0; i<n; i++)
+	{ cout<< "vec["<< i <<"]:"<< vec[i]<< endl;
+	}
+}
+
+void vectoresimpar(int veca[], int na,int vecb[], int &nb)
+{ int i; 
+   nb = 0;
+		for(i=0; i<na; i++)
+		{	if( veca[i]%2 != 0)
+			{ vecb[nb] = veca[i];
+			nb++;
+			}
+		}
+
+}
+void main()
+{ int a, vec[20],veca[20],vb[20],na,nb;
+	cout<<" cuantos elementos en su vector quiere pariente (no mas de 20) "<< endl;
+	cin>> a;
+	cargar(vec,a);
+	mostrar(vec,a);
+	vectoresimpar(vec,a,vb,nb);
+	cout<< "el vector con los impares es:"<< endl;
+	mostrar(vb,nb);
+
+	getch();
+}
