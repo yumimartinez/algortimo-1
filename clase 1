@@ -48,7 +48,7 @@ int main()
 	if(n<=0){
 		cout<< " su numero no es natural "<< endl;
 		cout<< " su numero tiene que se mayor a 0 pendejo!"<< endl;
-		cout<< " ESTUDIA!! NO SEAS COMO YUMI!!" << endl;
+		cout<< " ESTUDIA!! NO SEAS OPA!!" << endl;
 		getch();
 	}
 	else {
