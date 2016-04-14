@@ -1,0 +1,71 @@
+#include <iostream>
+#include <conio.h>
+#include <string.h>
+#define FIL 20
+#define COL 60
+
+using namespace std;
+
+
+char pantalla[FIL][COL];
+
+void limpiar()
+{int i,j;
+	for(i=0;i<FIL;i++)
+	{ for(j=0;j<COL;j++)
+		{ pantalla[i][j]= ' ';
+		}
+	}
+}
+void mostrar()
+{ int i,j;
+	for(i=0;i<FIL;i++)
+	{ for(j=0;j<COL;j++)
+		{ cout<< pantalla[i][j];
+	}
+	cout<<endl;
+	}
+}
+void diblineahorizontal(int x1,int y1, int x2, int y2)
+{ int i;
+	for(i=y1;i<y2;i++)
+	{ pantalla[x1][i] = char(196);
+	}
+}
+void diblineavertical(int x1,int y1, int x2, int y2)
+{ int j;
+	for(j=x1;j<x2;j++)
+	{
+		pantalla[j][y1] = char(179);
+	}
+}
+void dibcaja(int x1, int y1, int x2, int y2)
+{ 	diblineahorizontal(x1,y1,x1,y2);
+	diblineahorizontal(x2,y1,x2,y2);
+	diblineavertical(x1,y1,x2,y1);
+	diblineavertical(x1,y2,x2,y2);
+	pantalla[x1][y1]= char(218);
+		pantalla[x1][y2]=char(191);
+		pantalla[x2][y1]= char(192);
+		pantalla[x2][y2]= char(217);
+}
+void dibcaja2(int x1, int y1, int x2, int y2)
+{ 	diblineahorizontal(x2,y2,x1,y2);
+	diblineahorizontal(x1,y2,x1,y1);
+	diblineavertical(x2,y1,x2,y1);
+	diblineavertical(x1,y1,x2,y2);
+	pantalla[x1][y1]= char(218);
+	pantalla[x1][y2]=char(191);
+	pantalla[x2][y1]= char(192);
+	pantalla[x2][y2]= char(217);
+}
+void main()
+{
+	limpiar();
+	dibcaja(5,9,15,21);
+	dibcaja(4,8,12,16);
+	dibcaja2(12,39,18,24);
+	dibcaja2(23,19,20,56);
+	mostrar();
+	getch();
+}
