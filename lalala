@@ -1,0 +1,53 @@
+#include <iostream>
+#include <conio.h>
+#include <string.h>
+#define FIL 100
+#define COL 100
+
+
+struct tmatriz
+{  
+	int mat[FIL][COL];
+   int tamano,tamano1;
+
+};
+
+using namespace std;
+
+void cargar(tmatriz vec[], int n)
+{ int i,j,k;
+		for(i=0;i<n;i++)
+		{cout<<"cargue el tamanho de filas"<<endl;
+		cin>>vec[i].tamano;
+		cout<<"cargue el tamanho de columnas"<<endl;
+		cin>>vec[i].tamano1;
+		{	for(j=0;j<vec[i].tamano;j++)
+				{  for(k=0;k<vec[i].tamano1;k++)
+					{ cout<<"ingrese su numero"<< endl;
+						cin>> vec[i].mat[j][k];
+		}
+		}
+		}
+		}
+}
+
+
+void mostrar(tmatriz vec[], int n)
+{ int i,j,k;
+		for(i=0;i<n;i++)
+		{  for(j=0; j<vec[i].tamano;j++)
+		{ for(k=0;k<vec[j].tamano1;k++)
+		{ cout<< vec[i].mat[j][k];
+		}
+		}
+		}
+}
+void main() {
+int n;
+tmatriz vec[100];
+  cout<<"ingrese el numero de tamanho de su matriz"<<endl;
+  cin>> n;
+  cargar(vec,n);
+  mostrar(vec,n);
+  getch();
+}
